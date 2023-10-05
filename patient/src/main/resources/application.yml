@@ -1,11 +1,23 @@
 server:
   port: 9000
 
-spring:
-  application:
-    name: PATIENT-SERVICE
-
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+
+############# Database Properties ###########################################
+spring:
+  application:
+    name: PATIENT-SERVICE
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/patient_ms_db?useUnicode=true&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: nahonaho86
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
