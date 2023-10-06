@@ -15,7 +15,7 @@ import com.ninos.service.DoctorPatientService;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/doctor")
+@RequestMapping("/doctor-patient")
 public class DoctorPatientController {
 
     private final DoctorPatientService doctorPatientService;
