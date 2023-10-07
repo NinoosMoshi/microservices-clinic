@@ -7,11 +7,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ninos.mapper.PatientMapper;
 import com.ninos.model.dto.PatientDTO;
+import com.ninos.model.dto.PaymentDTO;
 import com.ninos.model.entity.Patient;
+import com.ninos.proxy.PatientPaymentProxy;
 import com.ninos.repository.PatientRepo;
 
 @RequiredArgsConstructor
@@ -20,6 +23,8 @@ public class PatientService {
 
     private final PatientRepo patientRepo;
     private final PatientMapper patientMapper;
+
+    private PatientPaymentProxy patientPaymentProxy;
 
 
     List<String> names = Arrays.asList("ninos", "nahrain", "matthew", "daniel");
@@ -65,6 +70,7 @@ public class PatientService {
                 .orElseThrow(() -> new EntityNotFoundException("Patient With ID " + patientId + " Not Found"));
         patientRepo.deleteById(patientId);
     }
+
 
 
 

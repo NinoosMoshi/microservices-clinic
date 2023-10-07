@@ -2,6 +2,8 @@ package com.ninos.controller;
 
 import lombok.RequiredArgsConstructor;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,6 +31,12 @@ public class PaymentController {
     @PostMapping("/add-payment")
     public PaymentDTO addNewPayment(@RequestBody PaymentDTO paymentDTO){
         return paymentService.addPayment(paymentDTO);
+    }
+
+
+    @GetMapping("/get-patient-payments")
+    public List<PaymentDTO> getPatientPayments(@RequestParam Long patientId){
+        return paymentService.getPatientPayments(patientId);
     }
 
 
