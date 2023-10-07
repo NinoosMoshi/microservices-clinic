@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.ninos.model.dto.PatientDTO;
 
-@FeignClient(name = "PATIENT-SERVICE")
+@FeignClient(name = "PATIENT-SERVICE", path = "/patient")
 public interface DoctorPatientProxy {
 
     @GetMapping("/search/{name}")
