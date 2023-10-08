@@ -3,7 +3,11 @@ server:
 
 spring:
   application:
-    name: API-GATEWAY
+    name: API-
+  boot:
+    admin:
+      client:
+        url: http://localhost:8888/
   cloud:
     gateway:
       discovery:

@@ -14,6 +14,10 @@ spring:
     allow-circular-references: true
   application:
     name: PATIENT-SERVICE
+  boot:
+    admin:
+      client:
+        url: http://localhost:8888/
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/patient_ms_db?useUnicode=true&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false

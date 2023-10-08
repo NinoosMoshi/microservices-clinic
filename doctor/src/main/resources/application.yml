@@ -6,6 +6,10 @@ server:
 spring:
   application:
     name: DOCTOR-SERVICE
+  boot:
+    admin:
+      client:
+        url: http://localhost:8888/
 
 eureka:
   client:

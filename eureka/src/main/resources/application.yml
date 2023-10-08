@@ -7,3 +7,7 @@ eureka:
 spring:
   application:
     name: EUREKA-SERVER
+  boot:
+    admin:
+      client:
+        url: http://localhost:8888/
